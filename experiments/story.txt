@@ -1,3 +1,4 @@
 ﻿../story/whatisnext.htm?../Experiments/   What is Next?
 ../story/index.htm?../experiments/HTML/       WEEK 1 - HTML and CSS Experiments
 ../story/index.htm?../experiments/JAVASCRIPT/       WEEK 2 - javascript Experiments
+../story/index.htm?../experiments/BOOTSTRAP/       WEEK 3 - Bootstrap Experiments
