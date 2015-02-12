@@ -98,8 +98,9 @@ body {
     <li><a href="images/autoimage.aspx" target="_blank">Images</a></li>
     <li><a href="blog/" target="_blank">Blog</a></li>
     <li><a href="story/index.htm?../experiments/story.txt" target="_blank">Experiments</a></li>
-    <li><a href="project/" target="_blank">Project</a></li>
-    <li><a href="documentation/" target="_blank">Documentation</a></li>
+    <li><a href="#" target="_blank">Project</a></li>
+    <li><a href="#" target="_blank">Documentation</a></li>
+    <li><a href="https://www.github.com/abhishek10/CS5610-abhik" target="_blank">Git Source Code</a></li>
 </ul>
 
 <hr />
