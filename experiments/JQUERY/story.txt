@@ -1,0 +1,6 @@
+../../story/whatisnext.htm?../experiments/JQUERY/   What is Next?
+Hide.aspx Remove Text    
+HideShow.aspx  Hide and Show Text
+Fade.aspx       Fade the squares
+SlideDown.aspx     Slide Down
+Animate.aspx      Animate 
