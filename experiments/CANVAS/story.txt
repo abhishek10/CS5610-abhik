@@ -1,0 +1,6 @@
+﻿../../story/whatisnext.htm?../experiments/CANVAS/   What is Next?
+Intro.aspx Intro    
+Face.aspx  Face
+Digits.aspx       Clock Digits
+Hands.aspx      Clock Hands
+RunClock.aspx      Running Clock 

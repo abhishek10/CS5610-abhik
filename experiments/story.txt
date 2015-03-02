@@ -3,5 +3,6 @@
 ../story/index.htm?../experiments/JAVASCRIPT/       WEEK 2 - javascript Experiments
 ../story/index.htm?../experiments/BOOTSTRAP/       WEEK 3 - Bootstrap Experiments
 ../story/index.htm?../experiments/JQUERY/       WEEK 4 - JQuery Experiments
-../story/index.htm?../experiments/ANGULAR/       WEEK 4 - AngularJS Experiments
+../story/index.htm?../experiments/ANGULAR/       WEEK 5 - AngularJS Experiments
+../story/index.htm?../experiments/CANVAS/       WEEK 6 - Clock experiment using Javascript and Canvas 
 
