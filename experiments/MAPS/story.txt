@@ -1,3 +1,6 @@
 ../../story/whatisnext.htm?../experiments/MAPS/   What is Next?
 Experiment1.aspx Perform Different operation on Map
 Experiment2.aspx Search for location on Map
+Experiment3.aspx Legends on Map
+Experiment4.aspx Scaling bar on Map
+Experiment5.aspx Toggle Base Map
