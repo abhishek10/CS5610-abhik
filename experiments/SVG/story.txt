@@ -1,0 +1,7 @@
+../../story/whatisnext.htm?../experiments/SVG/   What is Next?
+Ellipse.aspx  Ellipse using SVG
+Star.aspx  Star using SVG
+EllipseRadialGradient.aspx       Radial Gradient Ellipse
+Filter.aspx     Ellipse Blended Filter 
+RotateText.aspx      Rotated Text
+RotatingEllipse.aspx      Moving Ellipses (Supports on Chrome / Firefox / Opera)

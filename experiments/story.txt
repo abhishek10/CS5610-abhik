@@ -6,4 +6,5 @@
 ../story/index.htm?../experiments/ANGULAR/       WEEK 5 - AngularJS Experiments
 ../story/index.htm?../experiments/CANVAS/       WEEK 6 - Clock experiment using Javascript and Canvas 
 ../story/index.htm?../experiments/MAPS/       WEEK 7 - Maps 
+../story/index.htm?../experiments/SVG/       WEEK 8 - Scalable Vector Graphics 
 
