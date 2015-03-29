@@ -1,0 +1,6 @@
+../../story/whatisnext.htm?../experiments/WEBAPI/   What is Next?
+State.aspx  Get State of the Event
+Location.aspx  Get Location of the Event
+Time.aspx       Get Time of the Event
+Venue.aspx     Get Venue of the Event 
+Creator.aspx      Get Creator of the Event
