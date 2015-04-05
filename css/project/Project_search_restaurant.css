@@ -1,0 +1,273 @@
+﻿#searchBox {
+    width: 96%;
+    margin: auto auto;
+}
+
+#topSearchBox {
+   padding: 20px 15px;
+}
+
+#headings {
+   width: 100%;
+   float: left;
+   padding-bottom:2px;
+}
+
+
+#textBoxes {
+   width: 100%;
+   float: left;
+   padding-bottom:25px;
+}
+
+#select {
+    font-family: 'Times New Roman'; 
+    font-size: 18px; 
+    width:30%; 
+    height: 40px;
+    margin-right:2%;
+}
+
+
+#headings_second {
+   width: 100%;
+   float: left;
+   padding-bottom:8px;
+}
+
+#textBoxes_second {
+   width: 100%;
+   float: left;
+   padding-bottom:25px;
+}
+
+#select1 {
+    font-family: Times New Roman; 
+    font-size: 18px; 
+    width:30%; 
+    height: 40px;
+    margin-right:2%;
+}
+
+#categories  {
+    width:30%;
+    height:auto;
+    font-weight:bolder; 
+    font-family:Times New Roman; 
+    font-size: 18px;
+    color:#FFBF00;
+    margin-right:2%;
+    display:inline-block;
+    float:left;
+}
+
+#city {
+    width:30%;
+    height:auto;
+    font-weight:bolder; 
+    font-family:Times New Roman; 
+    font-size: 18px;
+    color:#FFBF00;
+    margin-right:2%;
+    display:inline-block;
+    float:left;
+}
+
+#categories_second {
+    width:30%;
+    height:auto;
+    font-weight:bolder; 
+    font-family:Times New Roman; 
+    font-size: 18px;
+    color:#FFBF00;
+    margin-right:2%;
+    display:inline;
+    float:left;
+}
+
+#locationName {
+     width: 30%;
+     height: 40px;
+     font-family: Times New Roman;
+     font-size: 18px;
+     margin-right:2%;
+}
+
+
+
+#eventType {
+     width: 30%;
+     height: 40px;
+     font-family: Times New Roman;
+     font-size: 18px;
+}
+
+#radius {
+    width:30%;
+    height:auto;
+    font-weight:bolder; 
+    font-family:Times New Roman; 
+    font-size: 18px;
+    color:#FFBF00;
+    display:inline-block;
+    float:left;
+}
+
+#error {
+    color:red;
+    font-family: Times New Roman; 
+    font-size: 18px; 
+    font-style:Italic;
+    font-weight: bold;
+}
+
+
+#searchButtonDiv 
+{
+    width: 100%;
+    margin: auto auto;
+    margin-top: 15px;
+    text-align: center;
+    padding-top:5%;
+    padding-bottom:3%;
+    border-bottom:2px solid #97694F;
+}
+
+#searchButton {
+    width: 15%;
+    height: 5%;
+    font-family: Times New Roman;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+#data {
+   width: 93%;
+   margin: auto auto;
+   padding: 2% 1.5%;
+}
+
+.data1 p a {
+    font-size: 25px;
+    font-family: Times New Roman;
+    color:#FF9900;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.data1 p a:hover {
+    cursor: pointer;
+    color:#fff;
+}
+
+#nav {
+    width: auto;
+    height: 60px;
+    margin: auto auto;   
+}
+
+#prevRestaurantButton {
+    float: left;
+}
+
+#nextRestaurantButton {
+    float: right;
+    text-align: right;
+}
+
+.heightZero 
+{
+    height: 0px;
+}
+
+.heightFull 
+{
+    height: 100%;
+}
+
+.heightauto {
+    height:auto;
+}
+
+.hidden {
+    visibility:hidden;
+}
+
+.visible {
+    visibility:visible;
+}
+
+#prevRestaurantButton, #nextRestaurantButton {
+    display:inline-block;
+	opacity:100;
+	filter:alpha(opacity=100); /* For IE8 and earlier */
+}
+
+#prevRestaurantButton:hover, #nextRestaurantButton:hover {
+    cursor: pointer;
+	opacity:0.5;
+	filter:alpha(opacity=50); /* For IE8 and earlier */
+}
+
+.arrow {
+     width:80px;
+     height:80px;
+}
+
+.imageSize {
+    width: 60%;
+    height: 100%;
+}
+
+.textData {
+     width: 95%;
+     height: 250px;
+     margin: auto auto;
+     padding: 5px 10px;
+     float:left;
+}
+
+.imageDiv {
+     width: 28%;
+     height: 70%;
+     float: left;
+}
+
+.dataTitle {
+     width: 25%;
+     height: 100%;
+     float: right;
+     font-family: Times New Roman;
+     font-size: 18px;
+}
+
+    .dataTitle a{
+        color:#97694F;
+    }
+
+        .dataTitle a:hover {
+            color:white;
+        }
+
+.dataAddress {
+     width: 42%;
+     height: 100%;
+     float: left;
+     text-align: center;
+     font-family: Times New Roman;
+     font-size: 18px;
+}
+
+span {
+     display: inline-block;
+     vertical-align: middle;
+}
+
+#search {
+    text-align:center;
+    font-weight:bolder; 
+    font-family:Times New Roman; 
+    font-size: 18px;
+    color:#FFBF00;
+}

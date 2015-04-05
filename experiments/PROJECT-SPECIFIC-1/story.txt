@@ -1,0 +1,6 @@
+../../story/whatisnext.htm?../experiments/PROJECT-SPECIFIC-1/   What is Next?
+Slider.aspx  Implement slider
+WebAPI.aspx  Call Web API depending upon the parameter provided
+JSONParser1.aspx     Parse received data for images and links
+JSONParser2.aspx     Parse received data for event information
+Pagination.aspx      Implemenet pagination

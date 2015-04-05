@@ -1,0 +1,167 @@
+﻿body {
+        font-family: Times New Roman;
+        font-size:12px;
+        color:#FFFFFF;
+        background-color:#000000;
+        margin: 0;
+        padding: 0;
+        }
+
+a 
+{
+	text-decoration:none;
+    color:#FF9900;
+}
+
+a:hover{
+	color:#fff;
+}
+
+
+.fl { float: left; }
+.fr { float: right }
+
+#containter {
+    
+    width:80%;
+    margin: 0 auto;
+	padding: 0 3%;
+    height:auto;
+}
+
+#header {
+    width: 100%;
+	height:auto;
+    overflow:auto;
+	margin: 0 auto;
+    //background-color:#5C3317;
+    background:url(../../images/project/background.jpg);
+    border-bottom:2px solid #97694F;
+}
+
+#logo {
+    width: 33%;
+	height: 118px;
+	margin: 0 auto;
+    background:url(../../images/project/world.jpg);
+    float:left;
+    margin-left:0.5%;
+    margin-top:1.5%;
+    background-repeat:no-repeat;
+    position:relative;
+}
+
+#name{
+	margin-top: 1.5%;	
+    width:43%;
+    height:auto;
+    font-family:'Times New Roman';
+    position:relative;
+    float:left;
+    }
+
+    #name h3 {
+    font-family:Times New Roman;
+    font-size:32px;
+    color:#FF9900;
+    text-align:center;
+    }
+
+     #name p {
+    font-family:Times New Roman;
+    font-size:15px;
+    }
+
+.login {
+    float:right;
+    width:auto;
+    height:auto;
+    font-weight:bold;
+    font-family:Times New Roman;
+    font-size:20px;
+    color:#FF9900;
+    margin-right:1%;
+    margin-top:1%;
+}
+
+#links
+ {
+    width:100%;
+}
+
+#links ul
+    {
+    width:100%;
+    height:auto;
+    overflow:auto;
+    margin: 0 auto;
+    background:#281300;
+    border-bottom:2px solid #97694F;
+    float:left;
+    font:bold 16px/120% "Bookman Old Style", Georgia;
+    list-style: none;
+    margin: 0px;
+    padding: 0 0 0 0;
+    }
+
+ #links ul li 
+    {   
+        display: inline;
+        padding: 0;
+    }
+
+    #links ul li a
+    {
+        position: relative;
+        float:left;
+        display: inline-block;
+        height:auto;
+        width:auto;
+        margin-bottom:13px;
+        margin-right:10px;
+        margin-left:10px;
+        text-align:center;
+        padding:13px 0 0 0;
+   
+    } 
+       
+#content {
+    font-size:14px;
+    width: 100%;
+    height:auto;
+    overflow:auto;
+    margin: 0 auto;
+    position:relative;
+    //background-color:#362819;
+    background:url(../../images/project/background.jpg);
+    border-bottom:2px solid #97694F;
+}
+
+.footer {
+    margin: 0 auto;
+    padding:8px 0 0;
+    width: 100%;
+    padding-bottom:1.5%;	
+    height: auto;
+    overflow:auto;
+    vertical-align:middle;
+    clear:both;
+    text-align:center;
+    color: #FFBF00;
+    background-color:#5C3317;
+}
+
+.image {
+    padding: 0 0 10px 0;
+	margin: 0 0 10px 0;
+    height: 160px;   
+}
+p
+{
+        text-align:justify;
+}
+    .pad 
+    {
+        padding: 10px;
+    }
+

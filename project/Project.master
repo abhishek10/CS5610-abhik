@@ -1,0 +1,59 @@
+﻿<%@ Master Language="C#"%>
+<%@ Import Namespace="System.Configuration" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="System.IO" %>
+<%@ Import Namespace="System.Data.SqlClient" %>
+<%@ Import Namespace="System.Security.Cryptography" %>
+
+<script runat="server">
+    public void Page_Load(object sender, EventArgs e)
+    {
+        if (Session["uname"] == null)
+        {
+            login.Text = "LOGIN";
+        }
+        if (Session["uname"] != null)
+        {
+            login.Text = "LOGOUT";
+        }
+    }
+</script>
+
+
+<head id="Head1" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta charset='utf-8' />
+    <title>Event Finder</title>
+    <link rel="stylesheet" href="../css/project/Project_style.css">
+    <link rel="icon" type="image/png"  href="../images/earth.jpg">
+
+</head>
+<!-- <body onload="initialize();"> -->
+<div id="containter">
+<div id="header">
+    <div id="logo"></div>
+    <div id="name"><h3>EVENT<br/> FINDER</h3></div>
+    <asp:HyperLink runat="server" CssClass="login" Target="_blank"  NavigateUrl="../Login.aspx" ID="login">LOGIN</asp:HyperLink>
+</div>
+
+<div id="links">
+<ul class="master_navigation">
+    <li><asp:HyperLink runat="server" NavigateUrl="~/project/Project_Home.aspx"  target="_blank" id="ho">Home</asp:HyperLink></li>
+    <li><asp:HyperLink runat="server" NavigateUrl="~/project/Search_Event.aspx"  target="_blank" id="se">Event Finder</asp:HyperLink></li>
+    <li><asp:HyperLink runat="server" NavigateUrl="#" target="_blank" id="do">Documentation</asp:HyperLink></li>
+    <li><asp:HyperLink runat="server" NavigateUrl="#" target="_blank" id="fe">Feedback</asp:HyperLink></li>
+    <li><asp:HyperLink runat="server" NavigateUrl="#" target="_blank" id="co">Contact Us</asp:HyperLink></li>
+</ul>
+</div>
+
+<div id="content"> 
+     <asp:ContentPlaceHolder ID="data" runat="server">
+     </asp:ContentPlaceHolder>
+</div>
+   
+<div class="footer">
+ © 2015 Abhishek Kedari - CS5610 Web Development Project. All rights reserved.
+</div>
+    </div>
+</body>
