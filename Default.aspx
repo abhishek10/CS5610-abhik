@@ -1,142 +1,73 @@
-﻿<%@ Page Language="C#" %>
-
-<script runat="server">
-    <%-- This demo page has no server side script --%>
-</script>
-
+﻿
 <!DOCTYPE html>
 
 <html lang="en">
 
 <head>
-
 <meta charset='utf-8' />
-
-<title>Demo Home Page</title>
-<style type="text/css">
-    ul.master_navigation
-    {
-        font-size: 100%;
-        font-weight: bold;
-        text-align: center;
-        list-style: none;
-        margin: 0.5em 0;
-        padding: 0;
-    }
-
-    ul.master_navigation li
-    {
-        display: inline-block;
-        padding: 0 0.5%;
-    }
-
-    a
-    {
-        color: #08f;
-        font-weight: bold;
-        text-decoration: none;
-    }
-
-    a:visited
-    {
-        color: #88f;
-    }
-
-    a:hover
-    {
-        color: #f00;
-    }
-
-    p
-    {
-        text-align: justify;
-    }
-</style>
-
-<style type="text/css" media="screen">
-    body {
-        width:900px;
-        max-width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-
-    .pad {
-        padding: 10px;
-    }
-</style>
-
-<style type="text/css">
-body {
-  background: url(images/background/other2.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-</style>
-
+<title>Abhishek Kedari</title>
+<link rel="stylesheet" href="css/Home_Page.css">
 </head>
 
 <body>
+<div id="header">
+    <div id="name"><h3>Abhishek Kedari</h3>
+        <p>CS5610 - WEB DEVELOPMENT COURSE</p>
+    </div>
+</div>
 
-<div class="pad">
-
-<form id="form1" runat="server">
-
-<div>
-
+<div id="links">
 <ul class="master_navigation">
-    <li><a href="sitestatistics/" target="_blank">SiteStatistics</a></li>
-    <li><a href="statistics/" target="_blank">Statistics</a></li>
-    <li><a href="source/" target="_blank">Source</a></li>
-    <li><a href="search/" target="_blank">Search</a></li>
-    <li><a href="searchtree/" target="_blank">SearchTree</a></li>
-    <li><a href="textview/" target="_blank">TextView</a></li>
-    <li><a href="filelist.aspx" target="_blank">FileList</a></li>
-    <li><a href="autofile.aspx" target="_blank">AutoFile</a></li>
-    <li><a href="images/autoimage.aspx" target="_blank">Images</a></li>
-    <li><a href="blog/" target="_blank">Blog</a></li>
-    <li><a href="story/index.htm?../experiments/story.txt" target="_blank">Experiments</a></li>
-    <li><a href="#" target="_blank">Project</a></li>
-    <li><a href="#" target="_blank">Documentation</a></li>
-    <li><a href="https://www.github.com/abhishek10/CS5610-abhik" target="_blank">Git Source Code</a></li>
+    <li><a href="sitestatistics/" target="_blank" class="current"><span></span>SiteStatistics</a></li>
+    <li><a href="statistics/" target="_blank"><span></span>Statistics</a></li>
+    <li><a href="source/" target="_blank"><span></span>Source</a></li>
+    <li><a href="search/" target="_blank"><span></span>Search</a></li>
+    <li><a href="searchtree/" target="_blank"><span></span>SearchTree</a></li>
+    <li><a href="textview/" target="_blank"><span></span>TextView</a></li>
+    <li><a href="filelist.aspx" target="_blank"><span></span>FileList</a></li>
+    <li><a href="autofile.aspx" target="_blank"><span></span>AutoFile</a></li>
+    <li><a href="images/autoimage.aspx" target="_blank"><span></span>Images</a></li>
+    <li><a href="blog/" target="_blank"><span></span>Blog</a></li>
+    <li><a href="story/index.htm?../experiments/story.txt" target="_blank"><span></span>Experiments</a></li>
 </ul>
-
-<hr />
-
-<div>
-        <img src="images/background/abhishek.jpg"/>
 </div>
 
-<div>
-<p>
-About Me :
-</p>
-Hi, welcome to my homepage. My name is Abhishek Kedari. I am a graduate student at Northeastern University pursuing Master's in Computer Science. I am developing this website as a part of Web Development course under Professor Jose Annunziato.
+<div class="content">
+    <div class="first_column fl">
+        <div class="image"><img class="profile" src="images/background/abhishek.jpg"></div>
+        <div class="personal_info">
+            <div class="contact_info h_divider">
+                <p id="detail">M.S. in Computer Science<br/>
+                    Northeastern University, Boston<br/>
+                    abhik@ccs.neu.edu<br/>
+                    (+1)857-265-9775
+                </p>
+            </div> 
+        </div>
+    </div>
+    <div class="second_column fl vl_divider">
+        <div class="heading">About me:</div>
+        <p id="content">Hi, welcome to my homepage. My name is Abhishek Kedari. I am a graduate student at 
+            Northeastern University pursuing Master's in Computer Science. Before my Master's, I completed my
+            Bachelor's in Computer Engineering from Pune University, India. <br/><br/><br/>
+            
+            I am developing this website as a part of Web Development course under Professor Jose Annunziato and TA Rishi Katyal.
+            I am very happy that I got chance to learn different web technologies as a part of this course and I am sure I can use
+            this learning in my career. 
+        </p>
+
+    </div>
+    <div class="third_column fl vl_divider h_divider">
+        <div class="heading">Project Information:  </div>
+        <div class="project_links h_divider">
+            <div class="project"><a href="project/Project_Home.aspx" target="_blank"><p>Project</p></a></div>
+            <div class="project_doc"><a href="#" target="_blank"><p>Project Documentation</p></a></div>
+            <div class="project"><a href="https://www.github.com/abhishek10/CS5610-abhik" target="_blank"><p>Git Source Code</p></a></div>
+        </div>
+    </div>  
 </div>
-<hr />
-<p>
-Here is a link to the
-<a href="story/index.htm" target="_blank">Story Utility</a>
-on this site so that you may explore this tool.
-</p>
-
-<p>
-Here is a link to the
-<a href="http://www.northeastern.edu/rasala/webstories.htm"
-        target="_blank">Web Development Stories</a>
-so that you may see a good collection of online documentation.
-</p>
-
-<hr />
-
-
-</div>
-
-</form>
-
-</div>
+    <div class="footer">
+© 2015 Abhishek Kedari - CS5610 Web Development course. All rights reserved.</div>
 
 </body>
 </html>

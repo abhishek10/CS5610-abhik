@@ -1,0 +1,88 @@
+﻿.textData {
+     width: auto;
+     height:auto;
+     margin: auto auto;
+     padding: 5px 10px;
+}
+.imageDiv {
+     width: 30%;
+     height: 40%;
+     float: left;
+     padding: 20px;
+     font-family: 'Times New Roman';
+     font-size: 18px;
+}
+
+.contentDiv {
+    width: auto;
+    height: auto;
+    float: left;
+    font-family: Times New Roman;
+    font-size: 18px;
+}
+
+.contentDiv a {
+    color:#97694F;
+}
+
+.clear {
+    clear: both;
+}
+
+.imageSize {
+    width: 80%;
+    height: 90%;
+}
+
+#reviewContainer {
+    width: 95%;
+    height: auto;
+    margin: auto auto;
+    font-family: Times New Roman;
+    font-size: 15px;
+    padding: 5px 10px;
+}
+
+.eachReviewDiv {
+    width: 100%;
+    height: 35%;
+    font-family:'Times New Roman';
+    font-size:18px;
+}
+
+.eachReviewDiv a{
+    color:#97694F;
+}
+
+.eachReviewDiv a:hover{
+    color:white;
+}
+
+.reviewUserImage {
+    width: auto;
+    height: 100%;
+    float: left;
+    padding-right:3%;
+}
+
+.info {
+    width:100%;
+    height:100%;
+}
+
+#restaurant_name {
+     width: auto;
+     height: auto;
+     float: left;
+     font-family: Times New Roman;
+     font-size: 18px;
+
+}
+
+#restaurant_name a{
+  color:#97694F;
+}
+
+#restaurant_name a:hover {
+        color:white;
+}

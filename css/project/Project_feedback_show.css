@@ -1,0 +1,49 @@
+﻿#feedback_show_form {
+    position:relative;
+    padding-top:5%;
+    padding-bottom:5%;
+    padding-left:2%;
+}
+
+#feedback {
+    color:#FF9900;
+    padding-bottom:10px;
+    font-family:'Times New Roman';
+    font-weight:bold;
+    font-size:20px;
+}
+
+.feedback_table {
+    width: 50%;   
+    background-color: black;   
+    margin: 5px 0 10px 0;   
+    border-collapse:collapse;  
+    font-family:'Times New Roman';
+    font-size:18px; 
+}
+
+.feedback_table td {   
+    padding: 2px;      
+    color: #FFBF00;  
+    padding-left:10px;
+}  
+.feedback_table th {   
+    
+    padding-left:10px; 
+    color: #FF9900;   
+    background: #281300;  
+    font-size: 0.9em;   
+}  
+
+.header {
+    height:40px;
+    text-align:left;
+    padding-top:1%;
+    padding-bottom:1%;
+}
+
+.row {
+     height:40px;
+     padding-top:1%;
+     padding-bottom:1%;
+}

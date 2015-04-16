@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Search_Event.aspx.cs" Inherits="project_Search_Event" MasterPageFile="Project.master"%>
+﻿<%@ Page Language="C#" MasterPageFile="~/project/Project.master" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="head" Runat="Server">
     <link rel="stylesheet" type="text/css" href="../css/project/Project_search_restaurant.css" />
@@ -29,7 +29,7 @@
                 <div id="city"><p>Enter the Location:</p></div>
                 <div id="categories"><p>Enter an Event Type</p></div>   
                 <div id="categories"><p>Start Date</p></div>   
-                <div id="categories"><p>End Date</p></div>   
+                <div id="categories"><p>End Date</p></div>    
                             
             </div>
             <div id="textBoxes">    

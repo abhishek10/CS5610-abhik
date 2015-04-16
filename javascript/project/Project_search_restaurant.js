@@ -91,25 +91,73 @@ function getRestaurantHTML() {
 
     var temp = document.getElementById('locationName').value;
     var event = document.getElementById('eventType').value;
+    var start_date = document.getElementById('datepicker1').value;
+    var end_date = document.getElementById('datepicker2').value;
+    var date = "future"
 
-    if (event == "" || event == undefined || event == null) {
-        event = "Music";
+    if ((end_date != null || start_date != null) && start_date == null && end_date == null) {
+        alert("Please provide the Start Date and End Date coorectly");
     }
+    else {
 
-    var oArgs = {
-        app_key: "MkPtkR7vPVRNxjVh",
-        q: event,
-        where: temp,
-        "date": "future",
-        page_size: 10,
-        sort_order: "popularity",
-        image_sizes: "large",
-        page_number : offset,
-    };
+        var Date1 = new Date(start_date);
+        var Date2 = new Date(end_date);
 
-    EVDB.API.call("/events/search", oArgs, function (data) {
-        createHTML(data);
-    });
+        if (end_date != null && start_date != null && Date1 > Date2) {
+            alert('End Date should be greater than Start Date');
+        }
+
+        else {
+            if (end_date != "") {;
+
+                eday = Date2.getDate();
+                if (eday.toString().length <= 1) {
+                    eday = '0' + eday;
+                }
+
+                emonth = Date2.getMonth() + 1;
+                if (emonth.toString().length <= 1) {
+                    emonth = '0' + emonth;
+                }
+                
+
+                eyear = Date2.getFullYear();
+
+                sday = Date1.getDate();
+                if (sday.toString().length <= 1) {
+                    sday = '0' + sday;
+                }
+
+                smonth = Date1.getMonth() + 1;
+                if (smonth.toString().length <= 1) {
+                    smonth = '0' + smonth;
+                }
+
+                syear = Date1.getFullYear();
+                date = "" + syear + smonth + sday + "00-" + eyear + emonth + eday +  "00";
+
+                }
+
+                if (event == "" || event == undefined || event == null) {
+                    event = "Music";
+                }
+
+                var oArgs = {
+                    app_key: "MkPtkR7vPVRNxjVh",
+                    q: event,
+                    where: temp,
+                    "date": date,
+                    page_size: 10,
+                    sort_order: "popularity",
+                    image_sizes: "large",
+                    page_number: offset,
+                };
+
+                EVDB.API.call("/events/search", oArgs, function (data) {
+                    createHTML(data);
+                });
+        }
+    }
 }
 
 /* This creates the entire HTML div which will be seen when all the restaurants
@@ -141,26 +189,71 @@ function createHTML(data) {
             y += '<div class="imageDiv">';
 
             //alert(data.events.event[i].image)
+            var imagestr = "";
 
             if (data.events.event[i].image == null) {
 
                 y += '<img src="../../images/project/notavailable.jpg" class="imageSize" alt="" /></a><br />';
+                imagestr = "../../images/project/notavailable.jpg";
             } else {
                 //alert(data.events.event[i].image.url);
                 y += '<img src=' + data.events.event[i].image.large.url + ' class="imageSize" alt="" /></a><br />';
+                imagestr = data.events.event[i].image.large.url;
             }
+
+            var title = data.events.event[i].title;
+            if (title == null || title == "" || title == undefined) {
+                title = "Not Available";
+            }
+            var venue_name = data.events.event[i].venue_name;
+            if (venue_name == null || venue_name == "" || venue_name == undefined) {
+                venue_name = "";
+            }
+            var venue_address = data.events.event[i].venue_address;
+            if (venue_address == null || venue_address == "" || venue_address == undefined) {
+                venue_address = "";
+            }
+            var city = data.events.event[i].city_name;
+            if (city == null || city == "" || city == undefined) {
+                city = "";
+            }
+            var region = data.events.event[i].region_name
+            if (region == null || region == "" || region == undefined) {
+                region = "";
+            }
+            var postal_code = data.events.event[i].postal_code;
+            if (postal_code == null || postal_code == "" || postal_code == undefined) {
+                postal_code = "Not Available";
+            }
+            var start_time = data.events.event[i].start_time;
+            if (start_time == null || start_time == "" || start_time == undefined) {
+                start_time = "Not Available";
+            }
+
+
 
             y += '</div>';
             y += '<div class="dataAddress"><span>';
-            y += '<b style="color:#FFBF00;"> Title : </b>' + data.events.event[i].title + '</br>';
-            y += '<b style="color:#FFBF00;"> Venue Name : </b>' + data.events.event[i].venue_name + '</br>';
-            var address = data.events.event[i].venue_address + ',</br>' + data.events.event[i].city_name + ', ' + data.events.event[i].region_name + ', </br> ZIP Code- ' + data.events.event[i].postal_code;
-            var startTime = data.events.event[i].start_time;
+
+            y += '<b style="color:#FFBF00;"> Title : </b>' + title + '</br>';
+            y += '<b style="color:#FFBF00;"> Venue Name : </b>' +venue_name + '</br>';
+            var address = venue_address + ',</br>' + city + ', ' + region + ', </br> ZIP Code- ' + postal_code;
+            var startTime = start_time;
+            if (address == "',</br>', , </br> ZIP Code- ") {
+                address = "Not Avaliable"
+            }
             y += '<b style="color:#FFBF00;"> Address : </b>' + address + '</br>';
             y += '<b style="color:#FFBF00;"> Time : </b>' + startTime + '</br>';
             y += '<br/></span>';
             y += '</div>';
+            //var details = y + '</div><br/><br/><br/><br style="clear=left;"/><br/><br/>';
             y += '<div class="dataTitle"><a href="' + data.events.event[i].url + '" target="_blank"><b>Book the Ticket</b></a><br/>';
+            var currentuser = document.getElementById("currUsername").value;
+            if (currentuser != "") {
+                var like_data = title.replace(/;/g, ",") + ";" + data.events.event[i].url + ";" + data.events.event[i].id;
+                y += '<br /><button id="likeButton" name="Like" type="button" value="' + like_data + '" onclick="like_event(this)">Like</button><br />';
+                y += '<br /><a href="' + "EventSpecificUsers.aspx?eventid='" + data.events.event[i].id + "'&title='" + title + "'&book='" + data.events.event[i].url + "'&address='" + venue_address + "'&start='" + start_time + "'&image=" + imagestr + '" target="_blank"><b>Who Else Likes This?</b></a><br />'
+            }
             y += '</div>';
             y += '</div>';
             y += '<br/><br/><br/><br style="clear=left;"/>';
@@ -239,3 +332,10 @@ function setRestaurantHandlers() {
         nextButton.addClass("hidden");
     }
 }
+
+
+$(function () {
+    $(".datepicker").datepicker();
+});
+
+

@@ -10,11 +10,15 @@
     {
         if (Session["uname"] == null)
         {
-            login.Text = "LOGIN";
+            currUsername.Value = null;
+            login.Text = "Login";
         }
         if (Session["uname"] != null)
         {
-            login.Text = "LOGOUT";
+            currUsername.Value = Session["uname"].ToString();
+            username.Text = "Welcome " + currUsername.Value;
+            login.Text = "Logout";
+            register.Visible = false;
         }
     }
 </script>
@@ -27,14 +31,25 @@
     <title>Event Finder</title>
     <link rel="stylesheet" href="../css/project/Project_style.css">
     <link rel="icon" type="image/png"  href="../images/earth.jpg">
+     <script type="text/javascript" src="../javascript/project/jquery-ui-1.10.4.custom.min.js"></script> 
+     <script type="text/javascript" src="../javascript/project/data_connection.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+      <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css" />
 
 </head>
-<!-- <body onload="initialize();"> -->
+<body> 
+      <input type="hidden" id="currUsername" name="currUsername" runat="server" value=""/>
 <div id="containter">
 <div id="header">
     <div id="logo"></div>
     <div id="name"><h3>EVENT<br/> FINDER</h3></div>
-    <asp:HyperLink runat="server" CssClass="login" Target="_blank"  NavigateUrl="../Login.aspx" ID="login">LOGIN</asp:HyperLink>
+    <asp:Label ID="username" runat="server" value="" CssClass="logged_user"/>
+    <asp:HyperLink runat="server" CssClass="login" NavigateUrl="../NewReg.aspx" ID="register"> | Register</asp:HyperLink>
+    <asp:HyperLink runat="server" CssClass="login" Target="_blank"  NavigateUrl="../Login.aspx" ID="login">Login</asp:HyperLink>
 </div>
 
 <div id="links">
@@ -42,8 +57,8 @@
     <li><asp:HyperLink runat="server" NavigateUrl="~/project/Project_Home.aspx"  target="_blank" id="ho">Home</asp:HyperLink></li>
     <li><asp:HyperLink runat="server" NavigateUrl="~/project/Search_Event.aspx"  target="_blank" id="se">Event Finder</asp:HyperLink></li>
     <li><asp:HyperLink runat="server" NavigateUrl="#" target="_blank" id="do">Documentation</asp:HyperLink></li>
-    <li><asp:HyperLink runat="server" NavigateUrl="#" target="_blank" id="fe">Feedback</asp:HyperLink></li>
-    <li><asp:HyperLink runat="server" NavigateUrl="#" target="_blank" id="co">Contact Us</asp:HyperLink></li>
+    <li><asp:HyperLink runat="server" NavigateUrl="#" target="_blank" id="fe">User Profiles</asp:HyperLink></li>
+    <li><asp:HyperLink runat="server" NavigateUrl="~/project/Contact_Us.aspx" target="_blank" id="co">Contact Us</asp:HyperLink></li>
 </ul>
 </div>
 

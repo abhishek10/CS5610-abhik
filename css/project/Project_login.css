@@ -1,0 +1,66 @@
+﻿#login_form {
+    position:relative;
+    height:auto;
+    padding-top:10%;
+    padding-bottom:10%;
+    margin-left:35%;
+   
+   
+}
+
+.title {
+    width:auto;
+    height:auto;
+    color:#FF9900;
+    padding-bottom:10px;
+    font-family:'Times New Roman';
+    font-weight:bold;
+    font-size:20px;
+}
+
+.label {
+    width:auto;
+    height:auto;
+    height:60px;
+    color:#FFBF00;
+    padding-bottom:10px;
+    padding-right:20px;
+    font-family:'Times New Roman';
+    font-weight:bold;
+    font-size:18px;
+}
+
+.text {
+    width:auto;
+    height:40px;
+    color:black;
+    padding-right:20px;
+    font-family:'Times New Roman';
+    font-weight:bold;
+    font-size:18px;
+}
+
+.check {
+    width:auto;
+    height:40px;
+    color:#FF9900;
+    padding-top:10px;
+    padding-right:20px;
+    padding-bottom:15px;
+    font-family:'Times New Roman';
+    font-size:18px;
+}
+
+.button {
+    width:30%;
+    height:40px;
+    color:#FFBF00;
+    font-family:'Times New Roman';
+    font-size:18px;
+    background:#281300;
+    color:#FF9900;
+}
+
+.fail {
+    padding-bottom:15px;
+}

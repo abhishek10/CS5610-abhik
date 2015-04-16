@@ -1,0 +1,36 @@
+﻿body {
+    background: url('../../images/background/other2.jpg');
+}
+
+.pad {
+    margin:6% 10%;
+    padding: 2% 5%;
+    border-radius: 15px;
+    background: #fff;
+}
+
+ul {
+    
+}
+
+p {
+    font-size: 1em !important;
+}
+
+p:before {
+    background: gray;
+    opacity: 0.8;
+}
+
+ul#vertical_menu > li
+{
+    /* apply li styles here as needed */
+    list-style-type: square;
+    list-style-position: outside;
+    list-style-image: url('../images/Icons/bullet.jpg');
+    font-size: 1.5em;
+}
+
+img {
+    max-width: 100%;
+}
