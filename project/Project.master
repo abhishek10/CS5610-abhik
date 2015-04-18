@@ -49,15 +49,14 @@
     <div id="name"><h3>EVENT<br/> FINDER</h3></div>
     <asp:Label ID="username" runat="server" value="" CssClass="logged_user"/>
     <asp:HyperLink runat="server" CssClass="login" NavigateUrl="../NewReg.aspx" ID="register"> | Register</asp:HyperLink>
-    <asp:HyperLink runat="server" CssClass="login" Target="_blank"  NavigateUrl="../Login.aspx" ID="login">Login</asp:HyperLink>
+    <asp:HyperLink runat="server" CssClass="login"  NavigateUrl="../Login.aspx" ID="login">Login</asp:HyperLink>
 </div>
 
 <div id="links">
 <ul class="master_navigation">
     <li><asp:HyperLink runat="server" NavigateUrl="~/project/Project_Home.aspx"  target="_blank" id="ho">Home</asp:HyperLink></li>
     <li><asp:HyperLink runat="server" NavigateUrl="~/project/Search_Event.aspx"  target="_blank" id="se">Event Finder</asp:HyperLink></li>
-    <li><asp:HyperLink runat="server" NavigateUrl="#" target="_blank" id="do">Documentation</asp:HyperLink></li>
-    <li><asp:HyperLink runat="server" NavigateUrl="#" target="_blank" id="fe">User Profiles</asp:HyperLink></li>
+    <li><asp:HyperLink runat="server" NavigateUrl="../story/index.htm?../project/documentation/story.txt" target="_blank" id="do">Documentation</asp:HyperLink></li>
     <li><asp:HyperLink runat="server" NavigateUrl="~/project/Contact_Us.aspx" target="_blank" id="co">Contact Us</asp:HyperLink></li>
 </ul>
 </div>

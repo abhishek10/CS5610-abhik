@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="head" Runat="Server">
     <link rel="stylesheet" type="text/css" href="../css/project/TableGenerator.css" />
-    <link rel="stylesheet" type="text/css" href="../css/project/Project_search_restaurant.css" />
+    <link rel="stylesheet" type="text/css" href="../css/project/Project_search_event.css" />
 
 </asp:Content>
 

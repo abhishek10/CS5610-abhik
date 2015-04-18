@@ -1,14 +1,7 @@
-﻿var message;
-var location;
-var parameters;
+﻿var location;
 var offset = 1;
-var prevRestaurantPage, nextRestaurantPage;
+var prevEventPage, nextEventPage;
 var total = 0;
-var category = 'food';
-var cat_filter;
-var radius;
-
-
 
 /* This function will appear in 2 scenarios
     1. When there is no query parameters in the url
@@ -20,9 +13,6 @@ Also we convert the query parameter values to lower case. */
 $(document).ready(function () {
     offset = 1;
     getLocationClick();
-    getFirstRestaurantPage();
-    initializeRestaurantPrevNext();
-    setRestaurantHandlers();
 });
 
 
@@ -30,9 +20,9 @@ $(document).ready(function () {
 It checks the radius filter parameter and converts it from miles to meters.*/
 function locationSearch() {
     offset = 1;
-    getFirstRestaurantPage();
-    initializeRestaurantPrevNext();
-    setRestaurantHandlers();
+    getFirstEventPage();
+    initializeEventPrevNext();
+    setEventHandlers();
     return false;
 }
 
@@ -59,17 +49,24 @@ function getLocationClick() {
                         if (result[c].types[0] == 'administrative_area_level_1')
                             state = result[c].short_name;
                     }
-                    if (state != "")
-                        var loc = city + ', ' + state;
-                    else
-                        var loc = city;
+                    var loc = city;
                     $("#locationName").val(loc);
-                } else
+                    getFirstEventPage();
+                    initializeEventPrevNext();
+                    setEventHandlers();
+                } else {
                     $("#error").append("Unable to retrieve your address<br />");
+                    getFirstEventPage();
+                    initializeEventPrevNext();
+                    setEventHandlers();
+                }
             });
     },
           function (positionError) {
               $("#error").append("Error: " + positionError.message + "<br />");
+              getFirstEventPage();
+              initializeEventPrevNext();
+              setEventHandlers();
           },
           {
               enableHighAccuracy: true,
@@ -78,16 +75,16 @@ function getLocationClick() {
 }
 
 /* Creates a message and calls the OAuth functions to create a parameterMap which
-    will be passed to the yelp api to request for restaurants based on a criteria */
+    will be passed to the yelp api to request for events based on a criteria */
 
-function getFirstRestaurantPage() {
-    getRestaurantHTML();
+function getFirstEventPage() {
+    getEventHTML();
 }
 
 /* Makes an ajax call to fetch the relevant data based on the parameterMap and the url
     which is passed in the message.action field.*/
 
-function getRestaurantHTML() {
+function getEventHTML() {
 
     var temp = document.getElementById('locationName').value;
     var event = document.getElementById('eventType').value;
@@ -160,7 +157,7 @@ function getRestaurantHTML() {
     }
 }
 
-/* This creates the entire HTML div which will be seen when all the restaurants
+/* This creates the entire HTML div which will be seen when all the events
     are fetched from the yelp API */
 
 function createHTML(data) {
@@ -169,10 +166,11 @@ function createHTML(data) {
 
     var y = "";
     /* If the data returned from the request is not defined or is null then we inform the user
-    by mentioning that no restaurants are found. */
-    if (data == undefined || (data.events.event.length == 0)) {
+    by mentioning that no events are found. */
+    if (total == 0) {
         document.getElementById("textContainer").innerHTML = "";
-        document.getElementById("totalSearch").innerHTML = "<p>No event matched your search</p>";
+        document.getElementById("error2").innerHTML = "<p>No event matched your search</p>";
+        document.getElementById("search").innerHTML = "";
 
         /* This code is used for pagination. When there are no results then we hide both the arrows*/
         var prevButton = $("#prevRestaurantButton");
@@ -182,7 +180,8 @@ function createHTML(data) {
         nextButton.removeClass();
         nextButton.addClass("hidden");
     } else {
-
+        document.getElementById("error2").innerHTML = "";
+        var currentuser = document.getElementById("currUsername").value;
         for (var i = 0; i < data.events.event.length; i++) {
 
             y += '<div class="textData">';
@@ -191,12 +190,10 @@ function createHTML(data) {
             //alert(data.events.event[i].image)
             var imagestr = "";
 
-            if (data.events.event[i].image == null) {
-
-                y += '<img src="../../images/project/notavailable.jpg" class="imageSize" alt="" /></a><br />';
-                imagestr = "../../images/project/notavailable.jpg";
+            if (data.events.event[i].image == null || data.events.event[i].image.large.url == "" || data.events.event[i].image.large.url == null) {
+                y += '<img src="../images/project/notavailable.jpg" class="imageSize" alt="" /></a><br />';
+                imagestr = "../images/project/notavailable.jpg";
             } else {
-                //alert(data.events.event[i].image.url);
                 y += '<img src=' + data.events.event[i].image.large.url + ' class="imageSize" alt="" /></a><br />';
                 imagestr = data.events.event[i].image.large.url;
             }
@@ -229,9 +226,6 @@ function createHTML(data) {
             if (start_time == null || start_time == "" || start_time == undefined) {
                 start_time = "Not Available";
             }
-
-
-
             y += '</div>';
             y += '<div class="dataAddress"><span>';
 
@@ -246,13 +240,12 @@ function createHTML(data) {
             y += '<b style="color:#FFBF00;"> Time : </b>' + startTime + '</br>';
             y += '<br/></span>';
             y += '</div>';
-            //var details = y + '</div><br/><br/><br/><br style="clear=left;"/><br/><br/>';
             y += '<div class="dataTitle"><a href="' + data.events.event[i].url + '" target="_blank"><b>Book the Ticket</b></a><br/>';
-            var currentuser = document.getElementById("currUsername").value;
             if (currentuser != "") {
                 var like_data = title.replace(/;/g, ",") + ";" + data.events.event[i].url + ";" + data.events.event[i].id;
-                y += '<br /><button id="likeButton" name="Like" type="button" value="' + like_data + '" onclick="like_event(this)">Like</button><br />';
-                y += '<br /><a href="' + "EventSpecificUsers.aspx?eventid='" + data.events.event[i].id + "'&title='" + title + "'&book='" + data.events.event[i].url + "'&address='" + venue_address + "'&start='" + start_time + "'&image=" + imagestr + '" target="_blank"><b>Who Else Likes This?</b></a><br />'
+                var isliked = "Like";
+                y += '<br /><button id="likeButton_' + i + '" style="width: 40%;height: 10%;font-family: Times New Roman;font-weight: bold;font-size: 15px;background-color:#105BB7;" name="Like" type="button" value="' + like_data + '" onclick="like_event(this)">' + isliked + '</button><br />';
+                y += '<br /><a href="' + "EventSpecificUsers.aspx?eventid='" + data.events.event[i].id + "'&title='" + title + "'&book=" + data.events.event[i].url + "&address='" + venue_address + "'&start='" + start_time + "'&image=" + imagestr + '" target="_blank"><b>Who Else Liked This?</b></a><br />'
             }
             y += '</div>';
             y += '</div>';
@@ -260,11 +253,18 @@ function createHTML(data) {
         }
 
         var searchText = "";
-        //searchText += '<br/><br/><p style="font-size:18px;">Search Results have: <b style="color:#FFBF00;">Location: </b> ' + document.getElementById('locationName').value;
-        //searchText += '</p><br/>';
+
         document.getElementById("totalSearch").innerHTML = searchText;
         document.getElementById("textContainer").innerHTML = y;
-        setRestaurantHandlers();
+        setEventHandlers();
+
+        // New code added
+        if (currentuser != "") {
+            for (var i = 0; i < data.events.event.length; i++) {
+                is_already_liked(data.events.event[i].id, "likeButton_" + i);
+
+            }
+        }
     }
 }
 
@@ -273,7 +273,7 @@ function createHTML(data) {
     we increase the offset value by 20 and call another function with the new
     offset value.
 */
-function initializeRestaurantPrevNext() {
+function initializeEventPrevNext() {
     var prevButton = $("#prevRestaurantButton");
     var nextButton = $("#nextRestaurantButton");
     /* Here we check if the offset is not equal to zero. 
@@ -284,8 +284,8 @@ previous 20 results.*/
     $('#prevRestaurantButton').unbind('click').bind('click', function (e) {
         if (offset != 1) {
             offset = offset - 1;
-            prevRestaurantPage = offset;
-            getFirstRestaurantPage();
+            prevEventPage = offset;
+            getFirstEventPage();
             var prevButton = $("#prevRestaurantButton");
         }
     });
@@ -295,8 +295,8 @@ the yelp api to get next 20 results */
 
     $('#nextRestaurantButton').unbind('click').bind('click', function (e) {
         offset = offset + 1;
-        nextRestaurantPage = offset;
-        getFirstRestaurantPage();
+        nextEventPage = offset;
+        getFirstEventPage();
 
         var nextButton = $("#nextRestaurantButton");
     });
@@ -309,11 +309,9 @@ the yelp api to get next 20 results */
     Also based on the type selected, the restaurantOptions div or categoryOptions 
     div will become visible and the other one will become hidden.
     Also when the div is hidden the length of the div will become zero*/
-function setRestaurantHandlers() {
+function setEventHandlers() {
     var prevButton = $("#prevRestaurantButton");
     var nextButton = $("#nextRestaurantButton");
-    var foodOptions = $("#categoryOptions");
-    var restOptions = $("#restaurantOptions");
 
     if (offset == 1 || offset == undefined) {
         prevButton.removeClass();
@@ -339,3 +337,9 @@ $(function () {
 });
 
 
+function enterKey(event) {
+    if (event.keyCode == 13) {
+        document.getElementById('data').scrollIntoView();
+        return locationSearch();
+    }
+}

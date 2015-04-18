@@ -31,13 +31,11 @@ public partial class project_EventSpecificUsers : System.Web.UI.Page
         y += "<b style=\"color:#FFBF00;\"> Title : </b>" + title + "</br>";
         y += "<b style=\"color:#FFBF00;\"> Address : </b>" + address + "</br>";
         y += "<b style=\"color:#FFBF00;\"> Time : </b>" + startTime + "</br>";
-        //y += "<a href=\"" + book + "\" target=\"_blank\"><b>Book the Ticket</b></a><br/>";
+        //y += "<a href=" + Uri.EscapeUriString(book) + " target=\"_blank\"><b>Book the Ticket</b></a><br/>";
         y += "<br/></span>";
-        y += "</div></div><br /><br /><br />";
+        y += "</div></div>";
 
-
-
-        String op = y + "<div><div class=\"table-title\"><h2>List of Users who Liked this Event</h2></div><table class=\"table-fill\"><thead><tr><th class=\"text-left\">First Name</th><th class=\"text-left\">Last Name</th><th class=\"text-left\">View Details</th></tr></thead><tbody class=\"table-hover\">";
+        String op = y + "<div><div class=\"table-title\"><h2>List of Users who Liked this Event</h2></div><table class=\"table-fill\"><thead><tr><th class=\"text-left\">User Name</th><th class=\"text-left\">View Details</th></tr></thead><tbody class=\"table-hover\">";
         string connectionString = ConfigurationManager.ConnectionStrings["abhik"].ConnectionString.ToString();
         SqlConnection con = new SqlConnection(connectionString);
         SqlCommand cmd = new SqlCommand("select u.firstname,u.lastname,u.uname FROM abhik.users u, abhik.likes l WHERE u.uname = l.uname AND eventid= " + eventid, con);
@@ -48,13 +46,13 @@ public partial class project_EventSpecificUsers : System.Web.UI.Page
         {
             while (reader.Read())
             {
-                op += "<tr><td class=\"text-left\">" + reader.GetString(0) + "</td><td class=\"text-left\">" + reader.GetString(1) + "</td><td class=\"text-left\">" + "<a href=\"UserProfile.aspx?userid=" + reader.GetString(1) + "\" target=\"_blank\"><b>View Profile</b></a></td></tr>";
+                op += "<tr><td class=\"text-left\">" + reader.GetString(0) + " " + reader.GetString(1) + "</td><td class=\"text-left\">" + "<a href=\"UserProfile.aspx?userid=" + reader.GetString(2) + "&firstname=" + reader.GetString(0) + "&lastname=" + reader.GetString(1) + "\" target=\"_blank\"><b>View Profile</b></a></td></tr>";
             }
             op += "</tbody></table></div>";
         }
         else
         {
-            op = "URL is " + eventid;
+            op = "<div><div class=\"table-title\"><h2><b style=\"color:#FFBF00;\"> There is No data to show </b></h2></div>";
         }
         reader.Close();
 

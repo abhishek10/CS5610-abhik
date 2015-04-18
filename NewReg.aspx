@@ -9,24 +9,25 @@
 
     <form id="form1" runat="server">
                 <br /><br />
-                <div id="label">First Name: </div>
+                <div id="label">First Name:* </div>
                 <input type = "text" size = "25" id="firstName" autocomplete = "on" required="required"/>                               
                 <br /><br />
                 <div id="label">Last Name: </div>
                 <input type = "text" size = "25" id="lastName" autocomplete = "on"/>                               
                 <br /><br />
-                <div id="label"> UserName: </div>
+                <div id="label"> UserName:* </div>
                 <input type = "text" size = "25" id="newUsername" autocomplete = "on" required="required"/>                               
                 <br /><br />
-                <div id="label">Password: </div>
+                <div id="label">Password:* </div>
                 <input type="password" size = "25" id="newPassword" autocomplete = "on" required="required"/>                               
                 <br /><br />
-                <div id="label">Confirm Password: </div>
+                <div id="label">Confirm Password:* </div>
                 <input type="password" size = "25" id="newConfirmPassword" autocomplete = "on" required="required"/>                               
                 <br /><br />
             
-            <div id="textBoxes">    
-                <div id="error"></div>
+            <div style="width:70%; margin:0 auto;">  
+                <div id="error" style="color:red; font-size:18px"></div>
+                <div id="success" style="color:yellowgreen; font-size:18px"></div>
              </div> <br />
             <div id="searchButtonDiv">
 		        <input id="btnGetTime" type="button" value="Register" onclick = "register_user()" />

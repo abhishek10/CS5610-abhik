@@ -10,24 +10,17 @@ using System.Configuration;
 
 public partial class project_UserProfile : System.Web.UI.Page
 {
-    String userid;
+    String userid,firstName,lastName;
     protected void Page_Load(object sender, EventArgs e)
     {
         userid = Request.QueryString["userid"];
+        firstName = Request.QueryString["firstname"];
+        lastName = Request.QueryString["lastname"];
 
 
-        string y = "<div id=\"data\" class=\"data1 height\">";
-        y += "<div class=\"textData\">";
-        y += "<div class=\"dataAddress\"><span>";
-        y += "<b style=\"color:#FFBF00;\"> Title : </b>" + userid + "</br>";
-        y += "<b style=\"color:#FFBF00;\"> Address : </b>" + userid + "</br>";
-        y += "<b style=\"color:#FFBF00;\"> Time : </b>" + userid + "</br>";
-        y += "<br/></span>";
-        y += "</div></div><br /><br /><br />";
+        String op = "<div><div class=\"table-title\"><h2><b style=\"color:#FFBF00;\"> Name : </b>" + firstName + " " + lastName + "<br/><br/> This User has also Liked: </h2></div><table class=\"table-fill\"><thead><tr><th class=\"text-left\">Event Name</th><th class=\"text-left\">Details</th></tr></thead><tbody class=\"table-hover\">";
 
-
-
-        String op = y + "<div><div class=\"table-title\"><h2>List of Users who Liked this Event</h2></div><table class=\"table-fill\"><thead><tr><th class=\"text-left\">First Name</th><th class=\"text-left\">Last Name</th></tr></thead><tbody class=\"table-hover\">";
+        //String op = y + "<div><div class=\"table-title\"><h2>"+ firstName + " " + lastName+" also Likes: </h2></div><table class=\"table-fill\"><thead><tr><th class=\"text-left\">Event Name</th><th class=\"text-left\">Details</th></tr></thead><tbody class=\"table-hover\">";
         string connectionString = ConfigurationManager.ConnectionStrings["abhik"].ConnectionString.ToString();
         SqlConnection con = new SqlConnection(connectionString);
         SqlCommand cmd = new SqlCommand("SELECT eventname,eventlink FROM abhik.likes WHERE uname = '" + userid + "'", con);
@@ -44,7 +37,7 @@ public partial class project_UserProfile : System.Web.UI.Page
         }
         else
         {
-            op = "URL is " + userid;
+            op = "<div><div class=\"table-title\"><h2><b style=\"color:#FFBF00;\"> There is No data to show </b></h2></div>";
         }
         reader.Close();
 

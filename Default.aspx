@@ -61,7 +61,7 @@
         <div class="heading">Project Information:  </div>
         <div class="project_links h_divider">
             <div class="project"><a href="project/Project_Home.aspx" target="_blank"><p>Project</p></a></div>
-            <div class="project_doc"><a href="#" target="_blank"><p>Project Documentation</p></a></div>
+            <div class="project_doc"><a href="story/index.htm?../project/documentation/story.txt" target="_blank"><p>Project Documentation</p></a></div>
             <div class="project"><a href="https://www.github.com/abhishek10/CS5610-abhik" target="_blank"><p>Git Source Code</p></a></div>
         </div>
     </div>  

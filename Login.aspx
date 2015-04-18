@@ -34,6 +34,7 @@
         }
         else
         {
+             //Label6.Text = "Incorrect Username or Password";
              e.Authenticated = false;
         }
         con.Close();
@@ -57,8 +58,10 @@
                     TitleTextStyle-CssClass="title" LoginButtonStyle-CssClass="button"  runat="server"  OnAuthenticate="login_check" VisibleWhenLoggedIn="false" DisplayRememberMe="true" >
                 </asp:Login>
 
+              <asp:Label ID="Label6" runat="server"></asp:Label>
+
     </form>
 
-      <asp:Label ID="Label6" runat="server" Text="Label"></asp:Label>
+
       
 </asp:Content>
