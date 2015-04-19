@@ -14,7 +14,7 @@
             <li>
                 <b>About APIs Used: </b>
                 <p>
-                    This project's core functionality is dependent on APIs provided eventful api. I would like to thank 'Eventful'
+                    The core functionality of the project is dependent on APIs provided by eventful apis. I would like to thank 'Eventful'
                     for providing their api and giving support for the same in my Project. The project is mainly dependent on two
                     APSs.<br /><br />
                     <b>1. Eventful API :</b><br />
@@ -23,11 +23,11 @@
                     <br />
                     http://api.eventful.com/rest/events/search?...&keywords=books&location=Boston
                     <br /><br />
-                    Eventful API supports different types of output format like XML, JSON, For this project I used JSON format.<br /><br />
+                    Eventful API supports different types of output formats like XML, JSON. For this project I used JSON format.<br /><br />
 
                     <b>2. Google API :</b><br />
-                    I also used google API to find current location of the user. Whenever search window gets launched, Google API
-                    will find the current location of the user and will present all the Music events going to happen at user's area
+                    I also used google APIs to find the current location of the user. Whenever search window gets launched, Google API
+                    will find the current location of the user and will present all the Music related events going to happen at user's area
                     This feature is particularly important because it is assumed that most of the time user search for the events 
                     in his/her local area and we are presenting user with the events in his/her area without any users input.
                 </p>

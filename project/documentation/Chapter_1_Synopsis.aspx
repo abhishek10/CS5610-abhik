@@ -34,8 +34,8 @@
                     3. User can define the particular time frame in which he want to check the events.<br />
                     4. If no location is provided by user, automatically User's current location is picked for event search.<br />
                     5. By default Type of event is selected as "Music"<br />
-                    6. User can see for any particular event what are all the people who liked that event.
-                    7. User can view the profile of other user and what kind of event other people like<br />
+                    6. User can see for any particular event what are all the people who liked that event.<br />
+                    7. User can view the profile of other user and what kind of event other people like.<br />
 
                 </p>
             </li>

@@ -56,6 +56,9 @@
 <ul class="master_navigation">
     <li><asp:HyperLink runat="server" NavigateUrl="~/project/Project_Home.aspx"  target="_blank" id="ho">Home</asp:HyperLink></li>
     <li><asp:HyperLink runat="server" NavigateUrl="~/project/Search_Event.aspx"  target="_blank" id="se">Event Finder</asp:HyperLink></li>
+    <% if(Session["uname"] != null) { %>
+          <li><asp:HyperLink runat="server" NavigateUrl="~/project/ListUsers.aspx" target="_blank" id="HyperLink1">List Users</asp:HyperLink></li>
+    <% } %>
     <li><asp:HyperLink runat="server" NavigateUrl="../story/index.htm?../project/documentation/story.txt" target="_blank" id="do">Documentation</asp:HyperLink></li>
     <li><asp:HyperLink runat="server" NavigateUrl="~/project/Contact_Us.aspx" target="_blank" id="co">Contact Us</asp:HyperLink></li>
 </ul>

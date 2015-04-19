@@ -27,10 +27,10 @@
                        <img class="image" src="../../images/project/documentation/searchGeneral.png"/><br/><br/>
 					   
 					<b>2. Logged in User:</b><br />
-					   If user is logged in. s/he is having access to all the feature which General user has with some additional
+					   If user is logged in, user is having access to all the feature which General user has with some additional
 					   features. Logged in user can like/unlike the events. Also user can check for any particular event what are
-					   all the users who likes that particular event. Also for any particular user, current logged in user can check 
-					   all the events liked by any particular user. So this like forming Social Network.<br /><br />
+					   all the users who liked that particular event. Also for any particular user, current logged in user can check 
+					   all the events liked by any particular user. Soit forms Social Network among the users of this website.<br /><br />
 					   
 					   Snapshot of Search Event Page is as follows - <br />
                        <img class="image" src="../../images/project/documentation/searchLoggedIn.png"/><br/><br/>

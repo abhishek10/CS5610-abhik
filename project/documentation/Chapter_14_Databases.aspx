@@ -14,7 +14,8 @@
             <li>
                 <b>About SQL Server</b>
                 <p>
-                    In this project, I used SQL Server as my database. I am using two tables to store the
+                    In this project, I used SQL Server as my database. SQL Server is installed on CCIS machine
+                    <b>MSSQL2005.development.ccs.neu.edu.</b> I am using two tables to store the
 					information about the users and all the events liked by any user. Each table and its 
 					purpose is as follows - <br/><br/>
 					<b>1) abhik.users Table:</b><br />

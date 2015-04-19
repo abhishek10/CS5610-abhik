@@ -14,7 +14,7 @@
             <li>
                 <b>About this page</b>
                 <p>
-                    This page is to show all the users who liked any particular event. User who are currently
+                    This page is to show all the users who liked any particular event. Users who are currently
 					logged in can only view this page. It gives user information about all the users who liked
 					any particular event. He can also check details of that particular user. This page is kept 
 					very simple without clutter of unnecessary information. It only shows table with the full name

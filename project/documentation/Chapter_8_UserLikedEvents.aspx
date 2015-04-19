@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <link rel="stylesheet" type="text/css" href="../../css/project/Project_documentation.css" />
-    <title>API</title>
+    <title>User Liked List</title>
 </head>
 <body>
     <div class="pad">

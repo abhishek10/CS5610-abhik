@@ -7,12 +7,14 @@ Chapter_5_HomePage.aspx					Chapter 5: Home Page
 Chapter_6_SearchEvent.aspx				Chapter 6: Search Event Page
 Chapter_7_EventsLikedUser.aspx			Chapter 7: Event to User Relation page
 Chapter_8_UserLikedEvents.aspx			Chapter 8: User to Event Relation page
-Chapter_9_Login.aspx					Chapter 9: Login Page
-Chapter_10_Registration.aspx			Chapter 10: Registration Page
-Chapter_11_ContactUs.aspx				Chapter 11: Contact Us Page
-Chapter_12_Databases.aspx				Chapter 12: Databases Used
-Chapter_13_ChallengesFaced.aspx			Chapter 13: Challenges Faced
-Chapter_14_TechnologyUsed.aspx			Chapter 14: Technologies Used
-Chapter_15_References.aspx				Chapter 15: References
-Chapter_16_Acknowledgment.aspx			Chapter 16: Acknowledgement
+Chapter_9_ListUsers.aspx				Chapter 9: List of all the Users
+Chapter_10_Login.aspx					Chapter 10: Login Page
+Chapter_11_Registration.aspx			Chapter 11: Registration Page
+Chapter_12_ContactUs.aspx				Chapter 12: Contact Us Page
+Chapter_13_Documentation.aspx			Chapter 13: Documentation
+Chapter_14_Databases.aspx				Chapter 14: Databases Used
+Chapter_15_ChallengesFaced.aspx			Chapter 15: Challenges Faced
+Chapter_16_TechnologyUsed.aspx			Chapter 16: Technologies Used
+Chapter_17_References.aspx				Chapter 17: References
+Chapter_18_Acknowledgment.aspx			Chapter 18: Acknowledgement
 story.txt								Story File for Project Documentation
